@@ -32,6 +32,6 @@ export async function toM3U (jar, xml, destination) {
   }
 }
 
-export * as tracks from './tracks'
-export * as playlists from './playlists'
-export * as transform from './transform'
+export * as tracks from '#music-library/library/tracks'
+export * as playlists from '#music-library/library/playlists'
+export * as transform from '#music-library/library/transform'
