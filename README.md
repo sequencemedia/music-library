@@ -1,6 +1,6 @@
 # @sequencemedia/music-library
 
-Parses an Apple Music `Library.xml` file and transforms it to [`m3u`](https://en.wikipedia.org/wiki/M3U) files, JSON, JavaScript or EcmaScript.
+Parses an Apple Music `Library.xml` file and transforms it to [`m3u`](https://en.wikipedia.org/wiki/M3U) files, JSON, JavaScript, or EcmaScript.
 
 The command line app can watch for changes to an Apple Music `Library.xml` file and write `m3u` files to a destination directory.
 
@@ -13,7 +13,10 @@ Requires [Java](https://www.oracle.com/java/technologies/javase-downloads.html) 
 ## Command line app
 
 ```
-npm run start -- --jar "/usr/local/bin/saxon/SaxonPE10-0J/saxon-pe-10.0.jar" --xml "~/Music/Music/Library.xml" --destination "~/Documents/Music Library"
+npm run start -- \
+  --jar "/usr/local/bin/saxon/SaxonPE10-6J/saxon-pe-10.6.jar" \
+  --xml "~/Music/Music/Library.xml" \
+  --destination "~/Documents/Music Library"
 ```
 
 Paths will differ on your device.
