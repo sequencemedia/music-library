@@ -34,8 +34,8 @@
   "scripts": {
     "lint": "eslint . --ext .mjs --ext .cjs",
     "lint:fix": "npm run lint -- --fix",
-    "start": "cross-env DEBUG=@sequencemedia/music-library* NODE_ENV=production node .",
-    "start:dev": "cross-env DEBUG=@sequencemedia/music-library* NODE_ENV=development node ."
+    "start": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=production node .",
+    "start:dev": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=development node ."
   },
   "dependencies": {
     "@sequencemedia/music-library-parser": "1.0.1",
@@ -44,7 +44,7 @@
     "cross-env": "^7.0.3",
     "debug": "^4.3.3",
     "dotenv": "^10.0.0",
-    "ps-list": "7.2.0",
+    "ps-list": "^8.0.0",
     "supports-color": "^9.2.1"
   },
   "devDependencies": {
