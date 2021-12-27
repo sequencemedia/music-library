@@ -61,7 +61,7 @@ async function app () {
     return
   }
 
-  const log = debug('music-library:log')
+  const log = debug('@sequencemedia/music-library')
 
   const {
     pid,
