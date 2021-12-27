@@ -14,8 +14,6 @@ import commander from 'commander'
 
 import * as watch from '#music-library/watch'
 
-console.log(watch)
-
 const {
   library,
   library: {
