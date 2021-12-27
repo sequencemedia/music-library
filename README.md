@@ -1,6 +1,6 @@
 # @sequencemedia/music-library
 
-Parses an Apple Music `Library.xml` file and transforms it to [`m3u`](https://en.wikipedia.org/wiki/M3U) files, JSON, or JavaScript.
+Parses an Apple Music `Library.xml` file and transforms it to [`m3u`](https://en.wikipedia.org/wiki/M3U) files, JSON, JavaScript or EcmaScript.
 
 The command line app can watch for changes to an Apple Music `Library.xml` file and write `m3u` files to a destination directory.
 
