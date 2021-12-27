@@ -19,3 +19,6 @@
 
 # NVM
 .nvmrc
+
+# Development
+.depsrc

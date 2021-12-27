@@ -32,17 +32,10 @@
     "url": "https://github.com/sequencemedia/music-library/issues"
   },
   "scripts": {
-    "build": "npm run babel",
-    "build:watch": "npm run babel:watch",
-    "clean": "rimraf lib",
-    "babel": "babel src -d lib",
-    "babel:watch": "npm run babel -- -w",
     "lint": "eslint . --ext .mjs --ext .cjs",
     "lint:fix": "npm run lint -- --fix",
     "start": "cross-env DEBUG=music-library* NODE_ENV=production node .",
-    "start:dev": "cross-env DEBUG=music-library* NODE_ENV=development node .",
-    "prepublishOnly": "npm run build",
-    "prebuild": "npm run clean"
+    "start:dev": "cross-env DEBUG=music-library* NODE_ENV=development node ."
   },
   "dependencies": {
     "@sequencemedia/music-library-parser": "1.0.0",
