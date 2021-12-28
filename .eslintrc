@@ -9,20 +9,5 @@
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
-  },
-  "overrides": [
-    {
-      "files": [
-        "app.js"
-      ],
-      "rules": {
-        "no-useless-return": "off"
-      }
-    }
-  ],
-  "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    }
   }
 }

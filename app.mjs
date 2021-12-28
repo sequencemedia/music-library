@@ -48,20 +48,21 @@ async function app () {
         pid
       } = a.find(({ pid }) => pid !== PID)
 
-      const log = debug('music-library:process:log')
+      const log = debug('@sequencemedia/music-library:process:log')
 
       log(`Killing application "${name}" in process ${pid}.`)
 
       process.kill(pid)
     }
   } catch ({ message }) {
-    const error = debug('music-library:process:error')
+    const error = debug('@sequencemedia/music-library:process:error')
 
     error(message)
     return
   }
 
   const log = debug('@sequencemedia/music-library')
+  const info = debug('@sequencemedia/music-library:info')
 
   const {
     pid,
@@ -103,7 +104,7 @@ async function app () {
   if (l) {
     log(`Application "${name}" in process ${pid} watching Library.`)
 
-    log({ jar, xml, destination })
+    info({ jar, xml, destination })
 
     return (
       library
@@ -113,6 +114,8 @@ async function app () {
     if (t) {
       log(`Application "${name}" in process ${pid} watching Tracks.`)
 
+    info({ jar, xml, destination })
+
       return (
         tracks
           .toM3U(jar, xml, destination)
@@ -121,6 +124,8 @@ async function app () {
 
     if (p) {
       log(`Application "${name}" in process ${pid} watching Playlists.`)
+
+    info({ jar, xml, destination })
 
       return (
         playlists
