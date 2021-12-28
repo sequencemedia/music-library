@@ -114,7 +114,7 @@ async function app () {
     if (t) {
       log(`Application "${name}" in process ${pid} watching Tracks.`)
 
-    info({ jar, xml, destination })
+      info({ jar, xml, destination })
 
       return (
         tracks
@@ -125,7 +125,7 @@ async function app () {
     if (p) {
       log(`Application "${name}" in process ${pid} watching Playlists.`)
 
-    info({ jar, xml, destination })
+      info({ jar, xml, destination })
 
       return (
         playlists
