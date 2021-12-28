@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-import * as musicLibraryParser from '@sequencemedia/music-library-parser'
+import musicLibraryParser from '@sequencemedia/music-library-parser'
 
 import normalise from '#music-library/common/normalise'
 

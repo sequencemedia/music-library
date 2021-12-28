@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-import * as musicLibraryParser from '@sequencemedia/music-library-parser'
+import musicLibraryParser from '@sequencemedia/music-library-parser'
 
 import normalise from '#music-library/common/normalise'
 
@@ -34,4 +34,4 @@ export async function toM3U (jar, xml, destination) {
   }
 }
 
-export * as transform from './transform'
+export * as transform from '#music-library/library/playlists/transform'

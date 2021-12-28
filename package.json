@@ -69,6 +69,11 @@
   "imports": {
     "#music-library/common/normalise": "./src/common/normalise.mjs",
     "#music-library/library": "./src/library/index.mjs",
+    "#music-library/library/transform": "./src/library/transform/index.mjs",
+    "#music-library/library/playlists": "./src/library/playlists/index.mjs",
+    "#music-library/library/playlists/transform": "./src/library/playlists/transform/index.mjs",
+    "#music-library/library/tracks": "./src/library/tracks/index.mjs",
+    "#music-library/library/tracks/transform": "./src/library/tracks/transform/index.mjs",
     "#music-library/watch": "./src/watch/index.mjs",
     "#music-library/watch/library": "./src/watch/library/index.mjs",
     "#music-library/watch/library/transform": "./src/watch/library/transform/index.mjs",

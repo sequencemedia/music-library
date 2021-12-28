@@ -22,6 +22,10 @@ const {
   }
 } = watch
 
+const log = debug('@sequencemedia/music-library')
+
+log('`music-library` is awake')
+
 const NAME = 'ml.App'
 process.title = NAME
 
@@ -61,16 +65,12 @@ async function app () {
     return
   }
 
-  const log = debug('@sequencemedia/music-library')
-  const info = debug('@sequencemedia/music-library:info')
-
   const {
     pid,
     argv,
     env: {
-      JAR,
-      XML,
-      DESTINATION
+      TRACKS = false,
+      PLAYLISTS = false
     }
   } = process
 
@@ -80,58 +80,69 @@ async function app () {
     version
   } = PACKAGE
 
-  commander
-    .version(version)
-    .option('-j, --jar [jar]', 'Path to Saxon PE/EE JAR')
-    .option('-x, --xml [xml]', 'Path to iTunes Library XML')
-    .option('-d, --destination [destination]', 'Destination path for M3Us')
-    .option('-t, --tracks', 'Parse all tracks')
-    .option('-p, --playlists', 'Parse all playlists')
-    .parse(argv)
+  try {
+    commander
+      .version(version)
+      .exitOverride()
+      .requiredOption('-j, --jar [jar]', 'Path to Saxon PE/EE JAR')
+      .requiredOption('-x, --xml [xml]', 'Path to iTunes Library XML')
+      .requiredOption('-d, --destination [destination]', 'Destination path for M3Us')
+      .option('-t, --tracks', 'Parse all tracks')
+      .option('-p, --playlists', 'Parse all playlists')
+      .parse(argv)
+  } catch (e) {
+    const {
+      code
+    } = e
+
+    const error = debug('@sequencemedia/music-library:commander:error')
+
+    if (code !== 'commander.missingMandatoryOptionValue') error(e)
+
+    error(`Halting application "${name}" in process ${pid}.`)
+    return
+  }
 
   const {
-    jar = JAR,
-    xml = XML,
-    destination = DESTINATION,
-    tracks: t = false,
-    playlists: p = false
+    jar,
+    xml,
+    destination,
+    tracks: t = TRACKS,
+    playlists: p = PLAYLISTS
   } = commander.opts()
 
-  const l = (
-    (t && p) || (!t && !p)
-  )
+  log({
+    jar,
+    xml,
+    destination
+  })
 
-  if (l) {
-    log(`Application "${name}" in process ${pid} watching Library.`)
-
-    info({ jar, xml, destination })
-
-    return (
-      library
-        .toM3U(jar, xml, destination)
+  try {
+    const l = (
+      (t && p) || (!t && !p)
     )
-  } else {
-    if (t) {
-      log(`Application "${name}" in process ${pid} watching Tracks.`)
 
-      info({ jar, xml, destination })
+    if (l) {
+      log(`Application "${name}" in process ${pid} watching Library.`)
 
-      return (
-        tracks
-          .toM3U(jar, xml, destination)
-      )
+      await library.toM3U(jar, xml, destination)
+    } else {
+      if (t) {
+        log(`Application "${name}" in process ${pid} watching Tracks.`)
+
+        await tracks.toM3U(jar, xml, destination)
+      } else {
+        if (p) {
+          log(`Application "${name}" in process ${pid} watching Playlists.`)
+
+          await playlists.toM3U(jar, xml, destination)
+        }
+      }
     }
+  } catch ({ message }) {
+    const error = debug('@sequencemedia/music-library:error')
 
-    if (p) {
-      log(`Application "${name}" in process ${pid} watching Playlists.`)
-
-      info({ jar, xml, destination })
-
-      return (
-        playlists
-          .toM3U(jar, xml, destination)
-      )
-    }
+    error(message)
   }
 }
 

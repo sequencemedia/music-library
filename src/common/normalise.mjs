@@ -2,8 +2,10 @@ import {
   homedir
 } from 'os'
 
-import path from 'path'
+import {
+  resolve
+} from 'path'
 
-const normalise = (p) => path.resolve(p.trim().replace(/^~/, homedir()))
+const normalise = (p = '') => resolve(String(p).trim().replace(/^~/, homedir()))
 
 export default normalise
