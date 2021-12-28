@@ -1,6 +1,6 @@
 {
   "name": "@sequencemedia/music-library",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Watch Apple Music Library XML and parse to JSON, JS, ES, or M3U",
   "keywords": [
     "music",
@@ -38,6 +38,7 @@
     "dev": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=development node .",
     "gulp": "gulp --color",
     "pre-commit": "npm run lint && cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:* npm run gulp -- pre-commit",
+    "post-commit": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:* npm run gulp -- post-commit",
     "prepare": "husky install"
   },
   "dependencies": {
