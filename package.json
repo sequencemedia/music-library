@@ -1,6 +1,6 @@
 {
   "name": "@sequencemedia/music-library",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Watch Apple Music Library XML and parse to JSON, JS, ES, or M3U",
   "keywords": [
     "music",
@@ -42,7 +42,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.2",
+    "@sequencemedia/music-library-parser": "1.0.6",
     "chokidar": "^3.5.2",
     "commander": "^8.3.0",
     "cross-env": "^7.0.3",
