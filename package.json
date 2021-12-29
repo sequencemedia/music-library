@@ -81,7 +81,6 @@
     "#music-library/watch/library/playlists": "./src/watch/library/playlists/index.mjs",
     "#music-library/watch/library/playlists/transform": "./src/watch/library/playlists/transform/index.mjs",
     "#music-library/watch/library/tracks": "./src/watch/library/tracks/index.mjs",
-    "#music-library/watch/library/tracks/transform": "./src/watch/library/tracks/transform/index.mjs",
-    "#build/gulp/*": "./build/gulp/*.mjs"
+    "#music-library/watch/library/tracks/transform": "./src/watch/library/tracks/transform/index.mjs"
   }
 }
