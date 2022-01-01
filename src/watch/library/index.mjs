@@ -12,9 +12,12 @@ const {
   }
 } = musicLibraryParser
 
+const log = debug('@sequencemedia/music-library')
 const error = debug('@sequencemedia/music-library:error')
 
 export function toM3U (jar, xml, destination) {
+  log('toM3U')
+
   const j = jar
     ? normalise(jar)
     : jar
@@ -27,10 +30,24 @@ export function toM3U (jar, xml, destination) {
     ? normalise(destination)
     : destination
 
+  log({ j, x, d })
+
   return (
     chokidar.watch(x)
-      .on('ready', () => parseToM3U(j, x, d))
-      .on('change', () => parseToM3U(j, x, d))
+      .on('ready', () => {
+        log('ready')
+
+        return (
+          parseToM3U(j, x, d)
+        )
+      })
+      .on('change', () => {
+        log('change')
+
+        return (
+          parseToM3U(j, x, d)
+        )
+      })
       .on('error', ({ message }) => {
         error(`Error in watcher: "${message}"`)
       })
