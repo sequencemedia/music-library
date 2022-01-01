@@ -34,6 +34,9 @@ export function toM3U (jar, xml, destination) {
 
   return (
     chokidar.watch(x)
+      .on('all', (t, p) => {
+        log(t, p)
+      })
       .on('ready', () => {
         log('ready')
 
