@@ -10,7 +10,9 @@ import {
 
 import psList from 'ps-list'
 
-import commander from 'commander'
+import {
+  Command
+} from 'commander'
 
 import * as watch from '#music-library/watch'
 
@@ -25,6 +27,8 @@ const {
 const log = debug('@sequencemedia/music-library')
 
 log('`music-library` is awake')
+
+const commander = new Command()
 
 const NAME = 'ml.App'
 process.title = NAME
