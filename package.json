@@ -1,6 +1,6 @@
 {
   "name": "@sequencemedia/music-library",
-  "version": "1.0.139",
+  "version": "1.0.145",
   "description": "Watch Apple Music Library XML and parse to JSON, JS, ES, or M3U",
   "keywords": [
     "music",
@@ -42,7 +42,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.117",
+    "@sequencemedia/music-library-parser": "1.0.120",
     "chokidar": "^3.5.3",
     "commander": "^9.2.0",
     "cross-env": "^7.0.3",
@@ -51,21 +51,21 @@
     "ps-list": "^8.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-proposal-export-default-from": "^7.16.7",
     "@babel/plugin-proposal-export-namespace-from": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-env": "^7.17.10",
     "@sequencemedia/hooks": "^1.0.102",
-    "core-js": "^3.22.2",
+    "core-js": "^3.22.4",
     "eslint": "^8.14.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "gulp": "^4.0.2",
-    "husky": "^7.0.4"
+    "husky": "^8.0.1"
   },
   "imports": {
     "#music-library/common/normalise": "./src/common/normalise.mjs",
