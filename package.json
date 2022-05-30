@@ -42,9 +42,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.133",
+    "@sequencemedia/music-library-parser": "1.0.134",
     "chokidar": "^3.5.3",
-    "commander": "^9.2.0",
+    "commander": "^9.3.0",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "dotenv": "^16.0.1",
@@ -57,7 +57,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.17.12",
     "@babel/plugin-proposal-export-namespace-from": "^7.17.12",
     "@babel/preset-env": "^7.18.2",
-    "@sequencemedia/hooks": "^1.0.119",
+    "@sequencemedia/hooks": "^1.0.120",
     "core-js": "^3.22.7",
     "eslint": "^8.16.0",
     "eslint-config-standard": "^17.0.0",
