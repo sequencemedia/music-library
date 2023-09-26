@@ -43,7 +43,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.511",
+    "@sequencemedia/music-library-parser": "1.0.512",
     "chokidar": "^3.5.3",
     "commander": "^11.0.0",
     "cross-env": "^7.0.3",
