@@ -43,7 +43,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.512",
+    "@sequencemedia/music-library-parser": "1.0.513",
     "chokidar": "^3.5.3",
     "commander": "^11.0.0",
     "cross-env": "^7.0.3",
@@ -55,7 +55,7 @@
     "@babel/core": "^7.23.0",
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.22.20",
-    "@sequencemedia/hooks": "^1.0.455",
+    "@sequencemedia/hooks": "^1.0.456",
     "core-js": "^3.33.0",
     "eslint": "^8.50.0",
     "eslint-config-standard": "^17.1.0",
