@@ -43,7 +43,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.537",
+    "@sequencemedia/music-library-parser": "1.0.538",
     "chokidar": "^3.5.3",
     "commander": "^11.1.0",
     "cross-env": "^7.0.3",
@@ -59,7 +59,7 @@
     "core-js": "^3.35.1",
     "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
-    "husky": "^9.0.7"
+    "husky": "^9.0.10"
   },
   "imports": {
     "#music-library/common/normalise": "./src/common/normalise.mjs",
