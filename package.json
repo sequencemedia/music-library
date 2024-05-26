@@ -36,14 +36,14 @@
     "url": "https://github.com/sequencemedia/music-library/issues"
   },
   "scripts": {
+    "dev": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=development node .",
     "lint": "eslint . --ext .mjs,.cjs",
     "lint:fix": "npm run lint -- --fix",
-    "start": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=production node .",
-    "dev": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=development node .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.553",
+    "@sequencemedia/music-library-parser": "1.0.554",
     "chokidar": "^3.6.0",
     "commander": "^12.1.0",
     "cross-env": "^7.0.3",
@@ -64,17 +64,17 @@
   "imports": {
     "#music-library/common/normalise": "./src/common/normalise.mjs",
     "#music-library/library": "./src/library/index.mjs",
-    "#music-library/library/transform": "./src/library/transform/index.mjs",
     "#music-library/library/playlists": "./src/library/playlists/index.mjs",
     "#music-library/library/playlists/transform": "./src/library/playlists/transform/index.mjs",
     "#music-library/library/tracks": "./src/library/tracks/index.mjs",
     "#music-library/library/tracks/transform": "./src/library/tracks/transform/index.mjs",
+    "#music-library/library/transform": "./src/library/transform/index.mjs",
     "#music-library/watch": "./src/watch/index.mjs",
     "#music-library/watch/library": "./src/watch/library/index.mjs",
-    "#music-library/watch/library/transform": "./src/watch/library/transform/index.mjs",
     "#music-library/watch/library/playlists": "./src/watch/library/playlists/index.mjs",
     "#music-library/watch/library/playlists/transform": "./src/watch/library/playlists/transform/index.mjs",
     "#music-library/watch/library/tracks": "./src/watch/library/tracks/index.mjs",
-    "#music-library/watch/library/tracks/transform": "./src/watch/library/tracks/transform/index.mjs"
+    "#music-library/watch/library/tracks/transform": "./src/watch/library/tracks/transform/index.mjs",
+    "#music-library/watch/library/transform": "./src/watch/library/transform/index.mjs"
   }
 }
