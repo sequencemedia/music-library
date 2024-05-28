@@ -43,7 +43,7 @@
     "start": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.555",
+    "@sequencemedia/music-library-parser": "1.0.556",
     "chokidar": "^3.6.0",
     "commander": "^12.1.0",
     "cross-env": "^7.0.3",
