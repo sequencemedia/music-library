@@ -21,7 +21,7 @@
   "author": {
     "name": "Jonathan Perry for Sequence Media Limited",
     "email": "sequencemedia@sequencemedia.net",
-    "url": "http://sequencemedia.net"
+    "url": "https://sequencemedia.net"
   },
   "license": "ISC",
   "engines": {
@@ -43,7 +43,7 @@
     "start": "cross-env DEBUG=@sequencemedia/music-library,@sequencemedia/music-library:*,@sequencemedia/music-library-parser,@sequencemedia/music-library-parser:* NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.0.558",
+    "@sequencemedia/music-library-parser": "1.0.559",
     "chokidar": "^3.6.0",
     "commander": "^12.1.0",
     "cross-env": "^7.0.3",
@@ -55,7 +55,7 @@
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "@sequencemedia/hooks": "^1.0.496",
+    "@sequencemedia/hooks": "^1.0.497",
     "core-js": "^3.37.1",
     "eslint": "8.57.0",
     "eslint-config-standard": "^17.1.0",
