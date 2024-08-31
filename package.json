@@ -49,8 +49,7 @@
     "cross-env": "^7.0.3",
     "debug": "^4.3.6",
     "dotenv": "^16.4.5",
-    "ps-list": "^8.1.1",
-    "rimraf": "^6.0.1"
+    "ps-list": "^8.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
