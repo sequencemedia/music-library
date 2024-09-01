@@ -137,17 +137,17 @@ async function app () {
     if (l) {
       log(`Application "${name}" in process ${pid} watching Library.`)
 
-      await library.toM3U(jar, xml, destination)
+      library.toM3U(jar, xml, destination)
     } else {
       if (t) {
         log(`Application "${name}" in process ${pid} watching Tracks.`)
 
-        await tracks.toM3U(jar, xml, destination)
+        tracks.toM3U(jar, xml, destination)
       } else {
         if (p) {
           log(`Application "${name}" in process ${pid} watching Playlists.`)
 
-          await playlists.toM3U(jar, xml, destination)
+          playlists.toM3U(jar, xml, destination)
         }
       }
     }
