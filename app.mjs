@@ -34,7 +34,7 @@ const NAME = 'ml.App'
 process.title = NAME
 
 async function app () {
-  const PACKAGE = JSON.parse(await readFile('./package.json'))
+  const PACKAGE = JSON.parse(await readFile('./package.json', 'utf8'))
 
   const {
     name
