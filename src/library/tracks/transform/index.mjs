@@ -16,7 +16,10 @@ const {
   }
 } = musicLibraryParser
 
+const log = debug('@sequencemedia/music-library:transform')
 const error = debug('@sequencemedia/music-library:transform:error')
+
+log('`music-library` is awake')
 
 export async function toJSON (jar, xml) {
   try {
@@ -28,7 +31,9 @@ export async function toJSON (jar, xml) {
       ? normalise(xml)
       : xml
 
-    return await transformToJSON(j, x)
+    return (
+      await transformToJSON(j, x)
+    )
   } catch ({ message }) {
     error(message)
   }
@@ -44,7 +49,9 @@ export async function toJS (jar, xml) {
       ? normalise(xml)
       : xml
 
-    return await transformToJS(j, x)
+    return (
+      await transformToJS(j, x)
+    )
   } catch ({ message }) {
     error(message)
   }
@@ -60,7 +67,9 @@ export async function toES (jar, xml) {
       ? normalise(xml)
       : xml
 
-    return await transformToES(j, x)
+    return (
+      await transformToES(j, x)
+    )
   } catch ({ message }) {
     error(message)
   }

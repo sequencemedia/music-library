@@ -17,6 +17,8 @@ const {
 const log = debug('@sequencemedia/music-library:tracks')
 const error = debug('@sequencemedia/music-library:tracks:error')
 
+log('`music-library` is awake')
+
 export function toM3U (jar, xml, destination) {
   const j = jar
     ? normalise(jar)

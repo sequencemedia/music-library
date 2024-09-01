@@ -12,7 +12,10 @@ const {
   }
 } = musicLibraryParser
 
+const log = debug('@sequencemedia/music-library')
 const error = debug('@sequencemedia/music-library:error')
+
+log('`music-library` is awake')
 
 export async function toM3U (jar, xml, destination) {
   try {
@@ -28,7 +31,9 @@ export async function toM3U (jar, xml, destination) {
       ? normalise(destination)
       : destination
 
-    return await parseToM3U(j, x, d)
+    return (
+      await parseToM3U(j, x, d)
+    )
   } catch ({ message }) {
     error(message)
   }

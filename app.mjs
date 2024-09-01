@@ -17,6 +17,14 @@ import {
 import * as watch from '#music-library/watch'
 
 const {
+  env: {
+    DEBUG = '@sequencemedia/music-library*,@sequencemedia/music-library-parser*'
+  }
+} = process
+
+if (DEBUG) debug.enable(DEBUG)
+
+const {
   library,
   library: {
     tracks,
@@ -56,7 +64,7 @@ async function app () {
         pid
       } = a.find(({ pid }) => pid !== PID)
 
-      const log = debug('@sequencemedia/music-library:process:log')
+      const log = debug('@sequencemedia/music-library:process')
 
       log(`Killing application "${name}" in process ${pid}.`)
 

@@ -18,7 +18,10 @@ const {
   }
 } = musicLibraryParser
 
+const log = debug('@sequencemedia/music-library:transform')
 const error = debug('@sequencemedia/music-library:transform:error')
+
+log('`music-library` is awake')
 
 export function toJSON (jar, xml, func = () => {}) {
   const j = jar
