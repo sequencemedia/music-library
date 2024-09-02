@@ -6,6 +6,8 @@ import {
   resolve
 } from 'path'
 
-const normalise = (p = '') => resolve(String(p).trim().replace(/^~/, homedir()))
-
-export default normalise
+export default function normalise (p = '') {
+  return (
+    resolve(String(p).trim().replace(/^~/, homedir()))
+  )
+}

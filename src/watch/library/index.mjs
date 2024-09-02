@@ -4,6 +4,10 @@ import debug from 'debug'
 
 import musicLibraryParser from '@sequencemedia/music-library-parser'
 
+import {
+  DEFAULT_ERROR_MESSAGE
+} from '#music-library/common'
+
 import normalise from '#music-library/common/normalise'
 
 const {
@@ -16,6 +20,12 @@ const log = debug('@sequencemedia/music-library:library')
 const error = debug('@sequencemedia/music-library:library:error')
 
 log('`music-library` is awake')
+
+function handleError ({
+  message = DEFAULT_ERROR_MESSAGE
+} = {}) {
+  error(`Error in watcher. The message was "${message}"`)
+}
 
 export function toM3U (jar, xml, destination) {
   const j = jar
@@ -32,18 +42,20 @@ export function toM3U (jar, xml, destination) {
 
   return (
     chokidar.watch(x)
-      .on('all', (t, p) => {
+      .on('all', function handleEvent (t, p) {
         log(`Event "${t}" for "${p}"`)
       })
-      .on('ready', () => (
-        parseToM3U(j, x, d)
-      ))
-      .on('change', () => (
-        parseToM3U(j, x, d)
-      ))
-      .on('error', ({ message }) => {
-        error(`Error in watcher: "${message}"`)
+      .on('ready', function handleReady () {
+        return (
+          parseToM3U(j, x, d)
+        )
       })
+      .on('change', function handleChange () {
+        return (
+          parseToM3U(j, x, d)
+        )
+      })
+      .on('error', handleError)
   )
 }
 

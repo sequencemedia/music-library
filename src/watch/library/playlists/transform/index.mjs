@@ -4,6 +4,11 @@ import debug from 'debug'
 
 import musicLibraryParser from '@sequencemedia/music-library-parser'
 
+import {
+  DEFAULT_ERROR_MESSAGE,
+  DEFAULT_FUNC
+} from '#music-library/common'
+
 import normalise from '#music-library/common/normalise'
 
 const {
@@ -23,7 +28,13 @@ const error = debug('@sequencemedia/music-library:transform:error')
 
 log('`music-library` is awake')
 
-export function toJSON (jar, xml, func = () => {}) {
+function handleError ({
+  message = DEFAULT_ERROR_MESSAGE
+} = {}) {
+  error(`Error in watcher. The message was "${message}"`)
+}
+
+export function toJSON (jar, xml, func = DEFAULT_FUNC) {
   const j = jar
     ? normalise(jar)
     : jar
@@ -34,23 +45,21 @@ export function toJSON (jar, xml, func = () => {}) {
 
   return (
     chokidar.watch(x)
-      .on('ready', async function ready () {
+      .on('ready', async function handleReady () {
         func(
           await transformToJSON(j, x)
         )
       })
-      .on('change', async function change () {
+      .on('change', async function handleChange () {
         func(
           await transformToJSON(j, x)
         )
       })
-      .on('error', ({ message }) => {
-        error(`Error in watcher: "${message}"`)
-      })
+      .on('error', handleError)
   )
 }
 
-export function toJS (jar, xml, func = () => {}) {
+export function toJS (jar, xml, func = DEFAULT_FUNC) {
   const j = jar
     ? normalise(jar)
     : jar
@@ -61,23 +70,21 @@ export function toJS (jar, xml, func = () => {}) {
 
   return (
     chokidar.watch(x)
-      .on('ready', async function ready () {
+      .on('ready', async function handleReady () {
         func(
           await transformToJS(j, x)
         )
       })
-      .on('change', async function change () {
+      .on('change', async function handleChange () {
         func(
           await transformToJS(j, x)
         )
       })
-      .on('error', ({ message }) => {
-        error(`Error in watcher: "${message}"`)
-      })
+      .on('error', handleError)
   )
 }
 
-export function toES (jar, xml, func = () => {}) {
+export function toES (jar, xml, func = DEFAULT_FUNC) {
   const j = jar
     ? normalise(jar)
     : jar
@@ -88,18 +95,16 @@ export function toES (jar, xml, func = () => {}) {
 
   return (
     chokidar.watch(x)
-      .on('ready', async function ready () {
+      .on('ready', async function handleReady () {
         func(
           await transformToES(j, x)
         )
       })
-      .on('change', async function change () {
+      .on('change', async function handleChange () {
         func(
           await transformToES(j, x)
         )
       })
-      .on('error', ({ message }) => {
-        error(`Error in watcher: "${message}"`)
-      })
+      .on('error', handleError)
   )
 }

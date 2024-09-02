@@ -64,6 +64,7 @@
   "imports": {
     "#music-library": "./src/index.mjs",
     "#music-library/*": "./src/*/index.mjs",
-    "#music-library/common/normalise": "./src/common/normalise.mjs"
+    "#music-library/common": "./src/common/index.mjs",
+    "#music-library/common/*": "./src/common/*.mjs"
   }
 }
