@@ -2,6 +2,10 @@ import debug from 'debug'
 
 import musicLibraryParser from '@sequencemedia/music-library-parser'
 
+import {
+  DEFAULT_ERROR_MESSAGE
+} from '#music-library/common'
+
 import normalise from '#music-library/common/normalise'
 
 const {
@@ -19,6 +23,12 @@ const error = debug('@sequencemedia/music-library:transform:error')
 
 log('`music-library` is awake')
 
+function handleError ({
+  message = DEFAULT_ERROR_MESSAGE
+} = {}) {
+  error(message)
+}
+
 export async function toJSON (jar, xml) {
   try {
     const j = jar
@@ -32,8 +42,8 @@ export async function toJSON (jar, xml) {
     return (
       await transformToJSON(j, x)
     )
-  } catch ({ message }) {
-    error(message)
+  } catch (e) {
+    handleError(e)
   }
 }
 
@@ -50,8 +60,8 @@ export async function toJS (jar, xml) {
     return (
       await transformToJS(j, x)
     )
-  } catch ({ message }) {
-    error(message)
+  } catch (e) {
+    handleError(e)
   }
 }
 
@@ -68,7 +78,7 @@ export async function toES (jar, xml) {
     return (
       await transformToES(j, x)
     )
-  } catch ({ message }) {
-    error(message)
+  } catch (e) {
+    handleError(e)
   }
 }
