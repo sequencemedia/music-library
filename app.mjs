@@ -14,6 +14,10 @@ import {
   Command
 } from 'commander'
 
+import {
+  DEFAULT_ERROR_MESSAGE
+} from '#music-library/common'
+
 import * as watch from '#music-library/watch'
 
 const {
@@ -70,7 +74,9 @@ async function app () {
 
       process.kill(pid)
     }
-  } catch ({ message }) {
+  } catch ({
+    message = DEFAULT_ERROR_MESSAGE
+  }) {
     const error = debug('@sequencemedia/music-library:process:error')
 
     error(message)
@@ -151,7 +157,9 @@ async function app () {
         }
       }
     }
-  } catch ({ message }) {
+  } catch ({
+    message = DEFAULT_ERROR_MESSAGE
+  }) {
     const error = debug('@sequencemedia/music-library:error')
 
     error(message)
