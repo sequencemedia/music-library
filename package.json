@@ -45,7 +45,7 @@
   "dependencies": {
     "@sequencemedia/music-library-parser": "1.1.55",
     "chokidar": "^4.0.3",
-    "commander": "^12.1.0",
+    "commander": "^13.0.0",
     "cross-env": "^7.0.3",
     "debug": "^4.4.0",
     "dotenv": "^16.4.7",
