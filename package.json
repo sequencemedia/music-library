@@ -43,7 +43,7 @@
     "start": "cross-env NODE_OPTIONS=\"--no-warnings\" NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.1.67",
+    "@sequencemedia/music-library-parser": "1.1.68",
     "chokidar": "^4.0.3",
     "commander": "^13.1.0",
     "cross-env": "^7.0.3",
@@ -54,10 +54,10 @@
   "devDependencies": {
     "@babel/core": "^7.26.8",
     "@babel/preset-env": "^7.26.8",
-    "@sequencemedia/eslint-config-standard": "^0.2.21",
+    "@sequencemedia/eslint-config-standard": "^0.2.22",
     "core-js": "^3.40.0",
     "eslint": "^9.20.1",
-    "globals": "^15.14.0",
+    "globals": "^15.15.0",
     "husky": "^9.1.7"
   },
   "imports": {
