@@ -43,7 +43,7 @@ export function toM3U (jar, xml, destination) {
     : destination
 
   return (
-    chokidar.watch(x)
+    chokidar.watch(x, { awaitWriteFinish: true })
       .on('all', function handleEvent (t, p) {
         log(`Event "${t}" for "${p}"`)
       })

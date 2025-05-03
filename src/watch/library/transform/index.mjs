@@ -42,7 +42,7 @@ export function toJSON (jar, xml, func = DEFAULT_FUNC) {
     : xml
 
   return (
-    chokidar.watch(x)
+    chokidar.watch(x, { awaitWriteFinish: true })
       .on('ready', async function handleReady () {
         func(
           await transformToJSON(j, x)
@@ -67,7 +67,7 @@ export function toJS (jar, xml, func = DEFAULT_FUNC) {
     : xml
 
   return (
-    chokidar.watch(x)
+    chokidar.watch(x, { awaitWriteFinish: true })
       .on('ready', async function handleReady () {
         func(
           await transformToJS(j, x)
@@ -92,7 +92,7 @@ export function toES (jar, xml, func = DEFAULT_FUNC) {
     : xml
 
   return (
-    chokidar.watch(x)
+    chokidar.watch(x, { awaitWriteFinish: true })
       .on('ready', async function handleReady () {
         func(
           await transformToES(j, x)
