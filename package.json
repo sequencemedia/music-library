@@ -29,9 +29,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sequencemedia/music-library.git"
+    "url": "git+https://github.com/sequencemedia/music-library.git"
   },
-  "homepage": "https://github.com/sequencemedia/music-library",
+  "homepage": "https://github.com/sequencemedia/music-library#readme",
   "bugs": {
     "url": "https://github.com/sequencemedia/music-library/issues"
   },
