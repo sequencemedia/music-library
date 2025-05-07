@@ -2,31 +2,21 @@
 
 import 'dotenv/config'
 
-import debug from 'debug'
-
 import {
   readFile
 } from 'fs/promises'
 
-import psList from 'ps-list'
-
 import {
   Command
 } from 'commander'
+
+import debug from '#debug'
 
 import {
   DEFAULT_ERROR_MESSAGE
 } from '#music-library/common'
 
 import * as watch from '#music-library/watch'
-
-const {
-  env: {
-    DEBUG = '@sequencemedia/music-library*,@sequencemedia/music-library-parser*'
-  }
-} = process
-
-if (DEBUG) debug.enable(DEBUG)
 
 const {
   library,
@@ -42,46 +32,12 @@ log('`music-library` is awake')
 
 const commander = new Command()
 
-const NAME = 'ml.App'
-process.title = NAME
-
 async function app () {
   const PACKAGE = JSON.parse(await readFile('./package.json', 'utf8'))
 
   const {
     name
   } = PACKAGE
-
-  /**
-   *  Permit only one instance of the application
-   */
-  try {
-    const a = (await psList())
-      .filter(({ name }) => name === NAME)
-
-    if (a.length > 1) {
-      const {
-        pid: PID
-      } = process
-
-      const {
-        pid
-      } = a.find(({ pid }) => pid !== PID)
-
-      const log = debug('@sequencemedia/music-library:process')
-
-      log(`Killing application "${name}" in process ${pid}.`)
-
-      process.kill(pid)
-    }
-  } catch ({
-    message = DEFAULT_ERROR_MESSAGE
-  }) {
-    const error = debug('@sequencemedia/music-library:process:error')
-
-    error(message)
-    return
-  }
 
   const {
     pid,
