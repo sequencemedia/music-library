@@ -36,8 +36,8 @@
     "url": "https://github.com/sequencemedia/music-library/issues"
   },
   "scripts": {
-    "kill-me-now": "cross-env NODE_OPTIONS=\"--no-warnings\" NODE_ENV=production node kill-me-now.mjs",
     "dev": "cross-env NODE_ENV=development node .",
+    "kill-me-now": "cross-env NODE_OPTIONS=\"--no-warnings\" NODE_ENV=production node kill-me-now.mjs",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky",
@@ -59,11 +59,11 @@
     "husky": "^9.1.7"
   },
   "imports": {
+    "#debug": "./src/debug.mjs",
     "#music-library": "./src/index.mjs",
     "#music-library/*": "./src/*/index.mjs",
     "#music-library/common": "./src/common/index.mjs",
     "#music-library/common/*": "./src/common/*.mjs",
-    "#where-am-i": "./where-am-i.mjs",
-    "#debug": "./src/debug.mjs"
+    "#where-am-i": "./where-am-i.mjs"
   }
 }
