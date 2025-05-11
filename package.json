@@ -44,13 +44,13 @@
     "start": "cross-env NODE_OPTIONS=\"--no-warnings\" NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.1.106",
+    "@sequencemedia/music-library-parser": "1.1.107",
     "chokidar": "^4.0.3",
     "commander": "^13.1.0",
     "cross-env": "^7.0.3",
     "debug": "^4.4.0",
     "dotenv": "^16.5.0",
-    "kill-me-now": "^0.0.13"
+    "kill-me-now": "^0.0.14"
   },
   "devDependencies": {
     "@sequencemedia/eslint-config-standard": "^0.2.57",
