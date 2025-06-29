@@ -44,7 +44,7 @@
     "start": "cross-env NODE_OPTIONS=\"--no-warnings\" NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.1.121",
+    "@sequencemedia/music-library-parser": "1.1.122",
     "chokidar": "^4.0.3",
     "commander": "^14.0.0",
     "cross-env": "^7.0.3",
