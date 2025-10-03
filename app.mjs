@@ -30,6 +30,10 @@ const log = debug('@sequencemedia/music-library')
 
 log('`music-library` is awake')
 
+const {
+  table
+} = console
+
 const commander = new Command()
 
 async function app () {
@@ -85,7 +89,7 @@ async function app () {
     playlists: p = PLAYLISTS
   } = commander.opts()
 
-  log({
+  table({
     jar,
     xml,
     destination
