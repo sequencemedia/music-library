@@ -50,10 +50,10 @@
     "cross-env": "^10.1.0",
     "debug": "^4.4.3",
     "dotenv": "^18.0.4",
-    "kill-me-now": "^0.0.158"
+    "kill-me-now": "^0.0.159"
   },
   "devDependencies": {
-    "@sequencemedia/eslint-config-standard": "^0.2.125",
+    "@sequencemedia/eslint-config-standard": "^0.2.126",
     "eslint": "9.38.0",
     "globals": "^17.12.0",
     "husky": "^9.1.7"
