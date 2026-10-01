@@ -44,18 +44,18 @@
     "start": "cross-env NODE_OPTIONS=\"--no-warnings\" NODE_ENV=production node ."
   },
   "dependencies": {
-    "@sequencemedia/music-library-parser": "1.1.174",
+    "@sequencemedia/music-library-parser": "1.1.175",
     "chokidar": "^5.0.0",
     "commander": "^15.0.0",
     "cross-env": "^10.1.0",
     "debug": "^4.4.3",
-    "dotenv": "^18.0.4",
-    "kill-me-now": "^0.0.160"
+    "dotenv": "^18.0.5",
+    "kill-me-now": "^0.0.161"
   },
   "devDependencies": {
     "@sequencemedia/eslint-config-standard": "^0.2.127",
     "eslint": "9.38.0",
-    "globals": "^17.12.0",
+    "globals": "^17.13.0",
     "husky": "^9.1.7"
   },
   "imports": {
