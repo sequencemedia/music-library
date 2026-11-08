@@ -45,17 +45,17 @@
   },
   "dependencies": {
     "@sequencemedia/music-library-parser": "1.1.181",
-    "chokidar": "^5.0.0",
-    "commander": "^15.0.0",
+    "chokidar": "^6.0.0",
+    "commander": "^15.1.0",
     "cross-env": "^10.1.0",
     "debug": "^4.4.3",
-    "dotenv": "^18.0.7",
-    "kill-me-now": "^0.0.174"
+    "dotenv": "^18.0.9",
+    "kill-me-now": "^0.0.175"
   },
   "devDependencies": {
-    "@sequencemedia/eslint-config-standard": "^0.2.132",
+    "@sequencemedia/eslint-config-standard": "0.2.132",
     "eslint": "9.38.0",
-    "globals": "^17.13.0",
+    "globals": "^17.14.0",
     "husky": "^9.1.7"
   },
   "imports": {
